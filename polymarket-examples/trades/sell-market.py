@@ -4,7 +4,7 @@ from py_clob_client.client import ClobClient
 from py_clob_client.clob_types import ApiCreds, MarketOrderArgs, OrderType
 from dotenv import load_dotenv
 from py_clob_client.constants import AMOY
-from py_clob_client.order_builder.constants import BUY
+from py_clob_client.order_builder.constants import SELL
 
 
 load_dotenv()
@@ -21,11 +21,11 @@ def main():
     chain_id = AMOY
     client = ClobClient(host, key=key, chain_id=chain_id, creds=creds)
 
-    #  give token-id from clob, amount in $, and side you would like to execute (buy/sell)
+    # get token id, sell in terms of shares, and purchase side
     order_args = MarketOrderArgs(
-        token_id="example-token-id",
-        amount=100,  # $$$
-        side=BUY,
+        token_id="example-token",
+        amount=100,  # SHARES
+        side=SELL,
     )
     signed_order = client.create_market_order(order_args)
     resp = client.post_order(signed_order, orderType=OrderType.FOK)
