@@ -17,7 +17,7 @@ subscribe_message = {
     "assets_ids": ASSET_IDS
 }
 
-# websocket message handlers #
+# websocket message handlers 
 def on_message(ws, message):
     data = json.loads(message)
     
