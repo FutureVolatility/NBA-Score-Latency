@@ -9,8 +9,9 @@ from datetime import datetime
 # check if game data, if so print each #
 # print team info, score info, game status, game time, 
 # current period #
-def get_current_games():
 
+
+def get_current_games():
     games = scoreboard.ScoreBoard()
     
     data = games.get_dict()

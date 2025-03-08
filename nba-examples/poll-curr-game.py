@@ -12,15 +12,8 @@ from datetime import datetime
 # check for updates on x interval #
 # only print if something changes #
 # save values for next iteration #
+
 def poll_game_updates(game_id, polling_interval=30, max_polls=None):
-    """
-    Polls for updates on a specific NBA game.
-    
-    Args:
-        game_id (str): The NBA game ID to monitor
-        polling_interval (int): Seconds to wait between polls (default: 30)
-        max_polls (int, optional): Maximum number of polls before stopping (None = unlimited)
-    """
     poll_count = 0
     last_score = {'home': None, 'away': None}
     last_period = None
@@ -106,6 +99,6 @@ def poll_game_updates(game_id, polling_interval=30, max_polls=None):
 
 if __name__ == "__main__":
 
-    EXAMPLE_GAME_ID = "1234567"  
+    EXAMPLE_GAME_ID = "0022400911"  
     
     poll_game_updates(EXAMPLE_GAME_ID, polling_interval=30)
